@@ -1,0 +1,31 @@
+# #include<stdio.h>
+#include<math.h>
+void main()
+{
+float a[30],sum=0,mean,sumstd=0,*p,var,stddev;
+int i,n;
+printf("enter the number of elements\n");
+scanf("%d",&n);
+printf("enter the elements\n");
+for(i=0;i<n;i++)
+scanf("%f",&a[i]);
+p=a;
+for(i=0;i<n;i++)
+{
+sum=sum+*p;
+p++;
+}
+mean=sum/n;
+p=a;
+for(i=0;i<n;i++)
+{
+sumstd=sumstd+(*p-mean)*(*p-mean);
+p++;
+}
+var=sumstd/n;
+stddev=sqrt(var);
+printf("sum=%f\n",sum);
+printf("mean=%f\n",mean);
+printf("var=%f\n",var);
+printf("stddev=%f\n",stddev);
+}
